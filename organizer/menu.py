@@ -5,10 +5,10 @@ class Menu:
 
     def menu_glowne(self):
         print('---Menu---')
-        print('1.Ksi\u0105\u017cki')
+        print('1.Książki')
         print('2.Gry')
         print('3.Filmy')
-        print('4.Wyj\u015bcie')
+        print('4.Wyjście')
 
 
 
