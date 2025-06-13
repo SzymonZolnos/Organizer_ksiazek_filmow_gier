@@ -1,13 +1,14 @@
 #Menu
-def start():
-    print('Witaj w organizerze książek, filmów i gier.\n'
-    'Jeśli chcesz zacząć naciśnij "start" , lub jeśli chcesz wyjść naciśnij "wyjdź".')
-def menu1():
-    print('---Menu---\n')
-    print('1.Książki\n')
-    print('2.Gry\n')
-    print('3.Filmy\n')
-    print('4.Wyjście\n')
+class Menu:
+    def start(self):
+        print('Witaj w organizerze! Naciśnij "start" lub "wyjdź".')
+
+    def menu_glowne(self):
+        print('---Menu---')
+        print('1.Ksi\u0105\u017cki')
+        print('2.Gry')
+        print('3.Filmy')
+        print('4.Wyj\u015bcie')
 
 
 

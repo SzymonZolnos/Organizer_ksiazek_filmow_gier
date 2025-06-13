@@ -1,22 +1,45 @@
-from menu import menu1
-from logic import l_ksiazki
-from logic import l_gry
-from logic import l_filmy
+from menu import Menu
+from logic import Pozycja
 
 def main():
+    menu = Menu()
+    menu.start()
     while True:
-        menu1()
-        wybor = input('Wybierz kategorie:')
+        menu.menu_glowne()
+        wybor = input('Wybierz kategorię:')
         if wybor == '1':
-            l_ksiazki()
+            ksiazka = Pozycja('ksiazka')
+            obsluz(ksiazka)
         elif wybor == '2':
-            l_gry()
+            gra = Pozycja('gra')
+            obsluz(gra)
         elif wybor == '3':
-            l_filmy()
+            film = Pozycja('film')
+            obsluz(film)
         elif wybor == '4':
-            print('Program zamknięty. Do zobaczenia!')
+            print('Do zobaczenia!')
             break
         else:
-            print('Nie ma takiej opcji! Wybierz inną.')
-if __name__=='__main__':
+            print('Nie ma takiej opcji.')
+
+def obsluz(pozycja):
+    while True:
+        print(f'---{pozycja.typ.title()}---')
+        print('1. Dodaj')
+        print('2. Pokaż')
+        print('3. Usuń')
+        print('4. Powrót')
+        wybor = input('Wybierz: ')
+        if wybor == '1':
+            pozycja.dodaj()
+        elif wybor == '2':
+            pozycja.pokaz()
+        elif wybor == '3':
+            pozycja.usun()
+        elif wybor == '4':
+            break
+        else:
+            print('Nie ma takiej opcji.')
+
+if __name__ == '__main__':
     main()
